@@ -1,0 +1,134 @@
+/**********************************************************************/
+/*setting*/
+/**********************************************************************/
+
+/****************************setting fonts***************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/****************************Setting page****************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  margin-block: 0;
+  outline: none;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: left;
+  background: $White;
+  font-size: 16px;
+  font-weight: 700;
+  color: $Darkgrayishblue;
+}
+
+/****************************setting text*****************************/
+.nav-wrapper,
+.description,
+.order-card {
+  font-weight: 400;
+
+  /********************Media********************/
+  @media screen and (max-width: 1180px) {
+    font-size: 15px;
+  }
+  /*********************************************/
+}
+
+h1 {
+  font-size: 13px;
+  color: $Orange;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  /********************Media********************/
+  @media screen and (max-width: 1180px) {
+    font-size: 12px;
+  }
+  /*********************************************/
+}
+
+h2 {
+  font-size: 44px;
+  color: $Verydarkblue;
+  /********************Media********************/
+  @media screen and (max-width: 1180px) {
+    font-size: 28px;
+  }
+  /*********************************************/
+}
+
+h3 {
+  font-size: 28px;
+  color: $Verydarkblue;
+}
+
+.percentage {
+  color: $Orange;
+}
+
+.old-price {
+  color: $Grayishblue;
+  text-decoration: line-through;
+}
+
+.order-number,
+.cart-title,
+.cart-dark {
+  font-weight: 700;
+  color: $Verydarkblue;
+}
+
+.popup-number {
+  font-size: 10px;
+  color: $White;
+}
+
+.nav-mobile-wrapper {
+  font-size: 18px;
+  font-weight: 700;
+  color: $Verydarkblue;
+}
+
+/***************************Setting button***************************/
+
+button {
+  color: $White;
+  font-weight: 700;
+  background-color: $Orange;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $OrangeHover;
+  }
+}
+/***************************Setting mixxin***************************/
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+/***************************Text link***************************/
+a,
+a:visited {
+  color: rgb(66, 0, 172);
+  text-decoration: none;
+}

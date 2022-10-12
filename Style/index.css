@@ -1,0 +1,702 @@
+/********************************************************************/
+/***************************Setting colors***************************/
+/********************************************************************/
+/**********************************************************************/
+/*setting*/
+/**********************************************************************/
+/****************************setting fonts***************************/
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+/****************************Setting page****************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  margin-block: 0;
+  outline: none;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: left;
+  background: hsl(0deg, 0%, 100%);
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(219deg, 9%, 45%);
+}
+
+/****************************setting text*****************************/
+.nav-wrapper,
+.description,
+.order-card {
+  font-weight: 400;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  .nav-wrapper,
+.description,
+.order-card {
+    font-size: 15px;
+  }
+}
+
+h1 {
+  font-size: 13px;
+  color: hsl(26deg, 100%, 55%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  h1 {
+    font-size: 12px;
+  }
+}
+
+h2 {
+  font-size: 44px;
+  color: hsl(220deg, 13%, 13%);
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  h2 {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: 28px;
+  color: hsl(220deg, 13%, 13%);
+}
+
+.percentage {
+  color: hsl(26deg, 100%, 55%);
+}
+
+.old-price {
+  color: hsl(220deg, 14%, 75%);
+  text-decoration: line-through;
+}
+
+.order-number,
+.cart-title,
+.cart-dark {
+  font-weight: 700;
+  color: hsl(220deg, 13%, 13%);
+}
+
+.popup-number {
+  font-size: 10px;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.nav-mobile-wrapper {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(220deg, 13%, 13%);
+}
+
+/***************************Setting button***************************/
+button {
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  background-color: hsl(26deg, 100%, 55%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: hsl(26deg, 100%, 71%);
+}
+
+/***************************Setting mixxin***************************/
+/***************************Text link***************************/
+a,
+a:visited {
+  color: rgb(66, 0, 172);
+  text-decoration: none;
+}
+
+/**********************************************************************/
+/*header*/
+/**********************************************************************/
+header {
+  position: relative;
+  width: 74%;
+  height: 85px;
+  border-bottom: solid 1px hsl(219deg, 35%, 92%);
+  margin: 20px auto 65px auto;
+  z-index: 1;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 638px) {
+  header {
+    height: 60px;
+  }
+}
+@media screen and (max-width: 770px) {
+  header {
+    width: 90%;
+    margin: 20px auto 15px auto;
+    border: none;
+  }
+}
+header .nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+}
+header .nav-container .nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0 20px 0;
+  gap: 32px;
+  /********************Media********************/
+  /*********************************************/
+  /*********************************************/
+}
+@media screen and (max-width: 980px) {
+  header .nav-container .nav-wrapper {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 865px) {
+  header .nav-container .nav-wrapper {
+    gap: 10px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 638px) {
+  header .nav-container .nav-wrapper {
+    display: block;
+    padding-bottom: 60px;
+  }
+}
+header .nav-container .nav-wrapper svg {
+  margin-right: 20px;
+  /********************Media********************/
+}
+@media screen and (max-width: 638px) {
+  header .nav-container .nav-wrapper svg {
+    margin-left: 35px;
+  }
+}
+header .nav-container .nav-wrapper p {
+  height: 65px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  /********************Media********************/
+  /*********************************************/
+}
+header .nav-container .nav-wrapper p:hover {
+  color: black;
+  border-bottom: solid 5px hsl(26deg, 100%, 55%);
+}
+@media screen and (max-width: 638px) {
+  header .nav-container .nav-wrapper p {
+    display: none;
+  }
+}
+header .nav-container .customer-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 125px;
+  gap: 46px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 980px) {
+  header .nav-container .customer-wrapper {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 865px) {
+  header .nav-container .customer-wrapper {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+header .nav-container .customer-wrapper .price-popup {
+  display: block;
+  padding-top: 40px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+header .nav-container .customer-wrapper .price-popup:hover {
+  transform: scale(1.1);
+}
+header .nav-container .customer-wrapper .price-popup:hover path {
+  fill: hsl(220deg, 13%, 13%);
+}
+header .nav-container .customer-wrapper .price-popup p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 19px;
+  height: 13px;
+  background-color: hsl(26deg, 100%, 55%);
+  border-radius: 10px;
+  transform: translate(9px, -6px);
+}
+header .nav-container .customer-wrapper img {
+  width: 50px;
+  height: 50px;
+  margin-top: 21px;
+  border-radius: 50px;
+  cursor: pointer;
+  /********************Media********************/
+  /*********************************************/
+}
+header .nav-container .customer-wrapper img:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+}
+@media screen and (max-width: 450px) {
+  header .nav-container .customer-wrapper img {
+    width: 24px;
+    height: 24px;
+    margin-top: 37px;
+  }
+}
+header .nav-container .popup-container {
+  display: block;
+  position: absolute;
+  width: 360px;
+  height: 256px;
+  background-color: hsl(0deg, 0%, 100%);
+  left: 73%;
+  bottom: -240px;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5);
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1200px) {
+  header .nav-container .popup-container {
+    left: 60%;
+  }
+}
+@media screen and (max-width: 880px) {
+  header .nav-container .popup-container {
+    left: 45%;
+  }
+}
+@media screen and (max-width: 770px) {
+  header .nav-container .popup-container {
+    left: 23%;
+  }
+}
+@media screen and (max-width: 700px) {
+  header .nav-container .popup-container {
+    left: 20%;
+  }
+}
+@media screen and (max-width: 638px) {
+  header .nav-container .popup-container {
+    left: 16%;
+    bottom: -280px;
+  }
+}
+@media screen and (max-width: 560px) {
+  header .nav-container .popup-container {
+    left: 10%;
+  }
+}
+@media screen and (max-width: 450px) {
+  header .nav-container .popup-container {
+    left: 2%;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .nav-container .popup-container {
+    left: -3%;
+  }
+}
+header .nav-container .popup-container .cart-title {
+  padding: 24px 0 0 24px;
+  height: 67px;
+  border-bottom: solid 1px hsl(219deg, 35%, 92%);
+}
+header .nav-container .popup-container .order-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 25px 24px 30px 24px;
+  justify-content: space-around;
+  align-items: center;
+}
+header .nav-container .popup-container .order-wrapper .empty-card {
+  display: none;
+  margin-top: 50px;
+  text-align: center;
+}
+header .nav-container .popup-container .order-wrapper .order-card {
+  display: block;
+}
+header .nav-container .popup-container .order-wrapper .delete {
+  display: block;
+}
+header .nav-container .popup-container .order-wrapper .order-picture {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+header .nav-container .popup-container .checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*   display: none;*/
+  width: 312px;
+  height: 56px;
+  margin: auto;
+}
+header .nav-mobile-popup {
+  display: none;
+  position: absolute;
+  padding-top: 24px;
+  cursor: pointer;
+  /********************Media********************/
+  /*********************************************/
+}
+header .nav-mobile-popup .nav-mobile-icone {
+  transition: 0.2s ease;
+}
+header .nav-mobile-popup .nav-mobile-icone:hover {
+  transform: scale(1.1);
+}
+header .nav-mobile-popup .nav-mobile-icone:hover path {
+  fill: hsl(220deg, 13%, 13%);
+}
+@media screen and (max-width: 638px) {
+  header .nav-mobile-popup {
+    display: block;
+  }
+}
+header .nav-mobile-popup .nav-mobile-container {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 250px;
+  height: 900px;
+  background-color: hsl(0deg, 0%, 100%);
+  left: -20px;
+  top: 10px;
+  padding: 25px;
+}
+header .nav-mobile-popup .nav-mobile-container svg {
+  margin-bottom: 50px;
+  transition: 0.2s ease;
+}
+header .nav-mobile-popup .nav-mobile-container svg:hover {
+  transform: scale(1.1);
+}
+header .nav-mobile-popup .nav-mobile-container svg:hover path {
+  fill: hsl(220deg, 13%, 13%);
+}
+header .nav-mobile-popup .nav-mobile-container .nav-mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.2s ease;
+}
+header .nav-mobile-popup .nav-mobile-container .nav-mobile-wrapper p:hover {
+  color: hsl(219deg, 9%, 45%);
+}
+
+/**********************************************************************/
+/*Main*/
+/**********************************************************************/
+main {
+  width: 74%;
+  margin: 0 auto;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 450px) {
+  main {
+    width: 100%;
+  }
+}
+main .container {
+  display: flex;
+  flex-direction: row;
+  gap: 125px;
+  width: 100%;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  main .container {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 970px) {
+  main .container {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 770px) {
+  main .container {
+    display: block;
+  }
+}
+main .container .images-grid {
+  display: grid;
+  grid-template-columns: 88px 88px 88px 88px;
+  grid-template-rows: 445px 88px;
+  gap: 31px;
+  grid-template-areas: "display-picture display-picture display-picture display-picture" "picture01 pitcure02 picture03 picture04";
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 970px) {
+  main .container .images-grid {
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 395px 80px;
+    gap: 25px;
+  }
+}
+@media screen and (max-width: 870px) {
+  main .container .images-grid {
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-rows: 360px 75px;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 770px) {
+  main .container .images-grid {
+    display: block;
+    margin: 0 auto;
+  }
+}
+main .container .images-grid .display-picture {
+  grid-area: display-picture;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  /********************Media********************/
+  /*********************************************/
+}
+main .container .images-grid .display-picture:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+}
+@media screen and (max-width: 450px) {
+  main .container .images-grid .display-picture {
+    height: 300px;
+    border-radius: 0px;
+  }
+}
+main .container .images-grid .picture01 {
+  grid-area: picture01;
+}
+main .container .images-grid .picture02 {
+  grid-area: pitcure02;
+}
+main .container .images-grid .picture03 {
+  grid-area: picture03;
+}
+main .container .images-grid .picture04 {
+  grid-area: picture04;
+}
+main .container .images-grid .picture01,
+main .container .images-grid .picture02,
+main .container .images-grid .picture03,
+main .container .images-grid .picture04 {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 770px) {
+  main .container .images-grid .picture01,
+main .container .images-grid .picture02,
+main .container .images-grid .picture03,
+main .container .images-grid .picture04 {
+    display: none;
+  }
+}
+main .container .images-grid .picture01:hover,
+main .container .images-grid .picture02:hover,
+main .container .images-grid .picture03:hover,
+main .container .images-grid .picture04:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+}
+main .right-container {
+  width: 100%;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 770px) {
+  main .right-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+main .right-container h1 {
+  padding-top: 40px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 970px) {
+  main .right-container h1 {
+    padding-top: 20px;
+  }
+}
+main .right-container h2 {
+  padding-top: 27px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 870px) {
+  main .right-container h2 {
+    padding-top: 20px;
+  }
+}
+main .right-container .description {
+  padding-top: 32px;
+  line-height: 26px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 870px) {
+  main .right-container .description {
+    padding-top: 20px;
+  }
+}
+main .right-container .price-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 870px) {
+  main .right-container .price-container {
+    padding-top: 15px;
+  }
+}
+main .right-container .price-container .percentage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 27px;
+  background-color: hsl(25deg, 100%, 94%);
+}
+main .right-container .old-price {
+  padding-top: 10px;
+}
+main .right-container .order-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding-top: 32px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 870px) {
+  main .right-container .order-container {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 770px) {
+  main .right-container .order-container {
+    display: block;
+    margin: 0 auto;
+  }
+}
+main .right-container .order-container .number-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 157px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: hsl(223deg, 64%, 98%);
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  main .right-container .order-container .number-wrapper {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 970px) {
+  main .right-container .order-container .number-wrapper {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 770px) {
+  main .right-container .order-container .number-wrapper {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+main .right-container .order-container .number-wrapper svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+main .right-container .order-container .number-wrapper svg path {
+  fill: hsl(26deg, 100%, 55%);
+}
+main .right-container .order-container .number-wrapper svg:hover path {
+  fill: hsl(26deg, 100%, 71%);
+}
+main .right-container .order-container .add-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 272px;
+  height: 56px;
+  /********************Media********************/
+  /*********************************************/
+}
+@media screen and (max-width: 1180px) {
+  main .right-container .order-container .add-order {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 970px) {
+  main .right-container .order-container .add-order {
+    width: 150px;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 770px) {
+  main .right-container .order-container .add-order {
+    width: 100%;
+  }
+}
+
+/*****align footer and set size and color*****/
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 20px auto;
+  color: rgb(31, 30, 30);
+}
+footer a,
+footer a:visited {
+  color: rgb(141, 37, 37);
+  text-decoration: underline;
+}/*# sourceMappingURL=index.css.map */

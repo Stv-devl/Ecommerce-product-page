@@ -1,0 +1,244 @@
+/**********************************************************************/
+/*Main*/
+/**********************************************************************/
+
+main {
+  width: 74%;
+  margin: 0 auto;
+
+  /********************Media********************/
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+  /*********************************************/
+
+  .container {
+    @include row;
+    gap: 125px;
+    width: 100%;
+
+    /********************Media********************/
+    @media screen and (max-width: 1180px) {
+      gap: 50px;
+    }
+    @media screen and (max-width: 970px) {
+      gap: 30px;
+    }
+    @media screen and (max-width: 770px) {
+      display: block;
+    }
+    /*********************************************/
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: 88px 88px 88px 88px;
+      grid-template-rows: 445px 88px;
+      gap: 31px;
+      grid-template-areas:
+        "display-picture display-picture display-picture display-picture"
+        "picture01 pitcure02 picture03 picture04";
+
+      /********************Media********************/
+      @media screen and (max-width: 970px) {
+        grid-template-columns: 80px 80px 80px 80px;
+        grid-template-rows: 395px 80px;
+        gap: 25px;
+      }
+      @media screen and (max-width: 870px) {
+        grid-template-columns: 75px 75px 75px 75px;
+        grid-template-rows: 360px 75px;
+        gap: 20px;
+      }
+      @media screen and (max-width: 770px) {
+        display: block;
+        margin: 0 auto;
+      }
+      /*********************************************/
+
+      .display-picture {
+        grid-area: display-picture;
+        width: 100%;
+        border-radius: 15px;
+        cursor: pointer;
+
+        &:hover {
+          border: solid 2px $Orange;
+        }
+        /********************Media********************/
+        @media screen and (max-width: 450px) {
+          height: 300px;
+          border-radius: 0px;
+        }
+        /*********************************************/
+      }
+
+      .picture01 {
+        grid-area: picture01;
+      }
+      .picture02 {
+        grid-area: pitcure02;
+      }
+      .picture03 {
+        grid-area: picture03;
+      }
+      .picture04 {
+        grid-area: picture04;
+      }
+
+      .picture01,
+      .picture02,
+      .picture03,
+      .picture04 {
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+
+        /********************Media********************/
+        @media screen and (max-width: 770px) {
+          display: none;
+        }
+        /*********************************************/
+
+        &:hover {
+          border: solid 2px $Orange;
+        }
+      }
+    }
+  }
+  .right-container {
+    width: 100%;
+
+    /********************Media********************/
+    @media screen and (max-width: 770px) {
+      width: 90%;
+      margin: 0 auto;
+    }
+    /*********************************************/
+
+    h1 {
+      padding-top: 40px;
+
+      /********************Media********************/
+      @media screen and (max-width: 970px) {
+        padding-top: 20px;
+      }
+      /*********************************************/
+    }
+
+    h2 {
+      padding-top: 27px;
+
+      /********************Media********************/
+      @media screen and (max-width: 870px) {
+        padding-top: 20px;
+      }
+      /*********************************************/
+    }
+
+    .description {
+      padding-top: 32px;
+      line-height: 26px;
+
+      /********************Media********************/
+      @media screen and (max-width: 870px) {
+        padding-top: 20px;
+      }
+      /*********************************************/
+    }
+
+    .price-container {
+      @include row;
+      align-items: center;
+      gap: 16px;
+      padding-top: 28px;
+
+      /********************Media********************/
+      @media screen and (max-width: 870px) {
+        padding-top: 15px;
+      }
+      /*********************************************/
+
+      .percentage {
+        @include center;
+        width: 51px;
+        height: 27px;
+        background-color: $Paleorange;
+      }
+    }
+    .old-price {
+      padding-top: 10px;
+    }
+    .order-container {
+      @include row;
+      gap: 16px;
+      padding-top: 32px;
+
+      /********************Media********************/
+      @media screen and (max-width: 870px) {
+        padding-top: 20px;
+      }
+      @media screen and (max-width: 770px) {
+        display: block;
+        margin: 0 auto;
+      }
+      /*********************************************/
+
+      .number-wrapper {
+        @include row;
+        align-items: center;
+        justify-content: space-around;
+        width: 157px;
+        height: 56px;
+        border-radius: 10px;
+        background-color: $Lightgrayishblue;
+
+        /********************Media********************/
+        @media screen and (max-width: 1180px) {
+          width: 120px;
+        }
+        @media screen and (max-width: 970px) {
+          width: 100px;
+        }
+        @media screen and (max-width: 770px) {
+          width: 100%;
+          margin-bottom: 16px;
+        }
+        /*********************************************/
+
+        svg {
+          @include center;
+          width: 20px;
+          cursor: pointer;
+          transition: 0.2s ease;
+
+          path {
+            fill: $Orange;
+          }
+
+          &:hover path {
+            fill: $OrangeHover;
+          }
+        }
+      }
+      .add-order {
+        @include center;
+        gap: 15px;
+        width: 272px;
+        height: 56px;
+
+        /********************Media********************/
+        @media screen and (max-width: 1180px) {
+          width: 200px;
+        }
+        @media screen and (max-width: 970px) {
+          width: 150px;
+          gap: 10px;
+        }
+        @media screen and (max-width: 770px) {
+          width: 100%;
+        }
+        /*********************************************/
+      }
+    }
+  }
+}

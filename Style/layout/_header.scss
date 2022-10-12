@@ -1,0 +1,274 @@
+/**********************************************************************/
+/*header*/
+/**********************************************************************/
+header {
+  position: relative;
+  width: 74%;
+  height: 85px;
+  border-bottom: solid 1px $Bordergrayishblue;
+  margin: 20px auto 65px auto;
+  z-index: 1;
+
+  /********************Media********************/
+  @media screen and (max-width: 638px) {
+    height: 60px;
+  }
+  @media screen and (max-width: 770px) {
+    width: 90%;
+    margin: 20px auto 15px auto;
+    border: none;
+  }
+  /*********************************************/
+
+  .nav-container {
+    @include row;
+    align-items: center;
+    justify-content: space-between;
+    height: 85px;
+
+    .nav-wrapper {
+      @include row;
+      padding: 40px 0 20px 0;
+      gap: 32px;
+
+      /********************Media********************/
+      @media screen and (max-width: 980px) {
+        gap: 15px;
+      }
+      @media screen and (max-width: 865px) {
+        gap: 10px;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 638px) {
+        display: block;
+        padding-bottom: 60px;
+      }
+      /*********************************************/
+
+      svg {
+        margin-right: 20px;
+
+        /********************Media********************/
+        @media screen and (max-width: 638px) {
+          margin-left: 35px;
+        }
+      }
+      /*********************************************/
+
+      p {
+        height: 65px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+          color: black;
+          border-bottom: solid 5px $Orange;
+        }
+        /********************Media********************/
+        @media screen and (max-width: 638px) {
+          display: none;
+        }
+        /*********************************************/
+      }
+    }
+
+    .customer-wrapper {
+      @include row;
+      height: 125px;
+      gap: 46px;
+
+      /********************Media********************/
+      @media screen and (max-width: 980px) {
+        gap: 30px;
+      }
+      @media screen and (max-width: 865px) {
+        gap: 20px;
+        font-size: 14px;
+      }
+      /*********************************************/
+
+      .price-popup {
+        display: block;
+        padding-top: 40px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:hover path {
+          fill: $Verydarkblue;
+        }
+
+        p {
+          @include center;
+          position: absolute;
+          width: 19px;
+          height: 13px;
+          background-color: $Orange;
+          border-radius: 10px;
+          transform: translate(9px, -6px);
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin-top: 21px;
+        border-radius: 50px;
+        cursor: pointer;
+
+        &:hover {
+          border: solid 2px $Orange;
+        }
+
+        /********************Media********************/
+        @media screen and (max-width: 450px) {
+          width: 24px;
+          height: 24px;
+          margin-top: 37px;
+        }
+        /*********************************************/
+      }
+    }
+
+    .popup-container {
+      display: block;
+      position: absolute;
+      width: 360px;
+      height: 256px;
+      background-color: $White;
+      left: 73%;
+      bottom: -240px;
+      z-index: 2;
+      border-radius: 10px;
+      box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5);
+
+      /********************Media********************/
+      @media screen and (max-width: 1200px) {
+        left: 60%;
+      }
+      @media screen and (max-width: 880px) {
+        left: 45%;
+      }
+      @media screen and (max-width: 770px) {
+        left: 23%;
+      }
+      @media screen and (max-width: 700px) {
+        left: 20%;
+      }
+      @media screen and (max-width: 638px) {
+        left: 16%;
+        bottom: -280px;
+      }
+      @media screen and (max-width: 560px) {
+        left: 10%;
+      }
+      @media screen and (max-width: 450px) {
+        left: 2%;
+      }
+      @media screen and (max-width: 400px) {
+        left: -3%;
+      }
+      /*********************************************/
+
+      .cart-title {
+        padding: 24px 0 0 24px;
+        height: 67px;
+        border-bottom: solid 1px $Bordergrayishblue;
+      }
+
+      .order-wrapper {
+        @include row;
+        padding: 25px 24px 30px 24px;
+        justify-content: space-around;
+        align-items: center;
+
+        .empty-card {
+          display: none;
+          margin-top: 50px;
+          text-align: center;
+        }
+
+        .order-card {
+          display: block;
+        }
+
+        .delete {
+          display: block;
+        }
+
+        .order-picture {
+          display: block;
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .checkout {
+        @include center;
+        /*   display: none;*/
+        width: 312px;
+        height: 56px;
+        margin: auto;
+      }
+    }
+  }
+  .nav-mobile-popup {
+    display: none;
+    position: absolute;
+    padding-top: 24px;
+    cursor: pointer;
+
+    .nav-mobile-icone {
+      transition: 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:hover path {
+        fill: $Verydarkblue;
+      }
+    }
+
+    /********************Media********************/
+    @media screen and (max-width: 638px) {
+      display: block;
+    }
+    /*********************************************/
+
+    .nav-mobile-container {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      width: 250px;
+      height: 900px;
+      background-color: $White;
+      left: -20px;
+      top: 10px;
+      padding: 25px;
+
+      svg {
+        margin-bottom: 50px;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:hover path {
+          fill: $Verydarkblue;
+        }
+      }
+
+      .nav-mobile-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: 0.2s ease;
+
+        p:hover {
+          color: $Darkgrayishblue;
+        }
+      }
+    }
+  }
+}
