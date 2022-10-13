@@ -129,7 +129,6 @@ a:visited {
 /*header*/
 /**********************************************************************/
 header {
-  position: relative;
   width: 74%;
   height: 85px;
   border-bottom: solid 1px hsl(219deg, 35%, 92%);
@@ -151,6 +150,7 @@ header {
   }
 }
 header .nav-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -228,7 +228,6 @@ header .nav-container .customer-wrapper {
   }
 }
 header .nav-container .customer-wrapper .price-popup {
-  display: block;
   padding-top: 40px;
   cursor: pointer;
   transition: 0.2s ease;
@@ -239,16 +238,19 @@ header .nav-container .customer-wrapper .price-popup:hover {
 header .nav-container .customer-wrapper .price-popup:hover path {
   fill: hsl(220deg, 13%, 13%);
 }
-header .nav-container .customer-wrapper .price-popup p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header .nav-container .customer-wrapper .price-popup .popup-number {
+  display: none;
   position: absolute;
   width: 19px;
   height: 13px;
   background-color: hsl(26deg, 100%, 55%);
   border-radius: 10px;
   transform: translate(9px, -6px);
+}
+header .nav-container .customer-wrapper .price-popup .active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header .nav-container .customer-wrapper img {
   width: 50px;
@@ -269,108 +271,118 @@ header .nav-container .customer-wrapper img:hover {
     margin-top: 37px;
   }
 }
-header .nav-container .popup-container {
-  display: block;
+header .popup-container {
+  display: none;
   position: absolute;
   width: 360px;
   height: 256px;
   background-color: hsl(0deg, 0%, 100%);
-  left: 73%;
-  bottom: -240px;
+  transform: translatex(52%);
+  left: 52%;
+  bottom: 54%;
   z-index: 2;
   border-radius: 10px;
   box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5);
   /********************Media********************/
   /*********************************************/
 }
-@media screen and (max-width: 1200px) {
-  header .nav-container .popup-container {
-    left: 60%;
+@media screen and (max-width: 1150px) {
+  header .popup-container {
+    transform: translatex(40%);
+    left: 40%;
   }
 }
-@media screen and (max-width: 880px) {
-  header .nav-container .popup-container {
-    left: 45%;
+@media screen and (max-width: 970px) {
+  header .popup-container {
+    bottom: 51%;
+  }
+}
+@media screen and (max-width: 870px) {
+  header .popup-container {
+    bottom: 50%;
+    transform: translatex(35%);
+    left: 35%;
   }
 }
 @media screen and (max-width: 770px) {
-  header .nav-container .popup-container {
-    left: 23%;
+  header .popup-container {
+    width: 100%;
+    bottom: 60%;
+    transform: translatex(0%);
+    left: 0%;
   }
 }
-@media screen and (max-width: 700px) {
-  header .nav-container .popup-container {
-    left: 20%;
+@media screen and (max-width: 480px) {
+  header .popup-container {
+    bottom: 55%;
   }
 }
-@media screen and (max-width: 638px) {
-  header .nav-container .popup-container {
-    left: 16%;
-    bottom: -280px;
-  }
-}
-@media screen and (max-width: 560px) {
-  header .nav-container .popup-container {
-    left: 10%;
-  }
-}
-@media screen and (max-width: 450px) {
-  header .nav-container .popup-container {
-    left: 2%;
-  }
-}
-@media screen and (max-width: 400px) {
-  header .nav-container .popup-container {
-    left: -3%;
-  }
-}
-header .nav-container .popup-container .cart-title {
+header .popup-container .cart-title {
   padding: 24px 0 0 24px;
   height: 67px;
   border-bottom: solid 1px hsl(219deg, 35%, 92%);
 }
-header .nav-container .popup-container .order-wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 25px 24px 30px 24px;
-  justify-content: space-around;
-  align-items: center;
-}
-header .nav-container .popup-container .order-wrapper .empty-card {
-  display: none;
+header .popup-container .empty-card {
+  display: block;
   margin-top: 50px;
   text-align: center;
 }
-header .nav-container .popup-container .order-wrapper .order-card {
-  display: block;
+header .popup-container .order-wrapper {
+  display: none;
+  justify-content: space-around;
+  padding: 28px 20px 28px 20px;
+  margin: 0 auto;
+  align-items: center;
 }
-header .nav-container .popup-container .order-wrapper .delete {
-  display: block;
-}
-header .nav-container .popup-container .order-wrapper .order-picture {
-  display: block;
+header .popup-container .order-wrapper .order-picture {
   width: 50px;
   height: 50px;
 }
-header .nav-container .popup-container .checkout {
+header .popup-container .order-wrapper svg {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+header .popup-container .order-wrapper svg:hover {
+  transform: scale(1.1);
+}
+header .popup-container .order-wrapper svg:hover path {
+  fill: hsl(220deg, 13%, 13%);
+}
+header .popup-container .checkout {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*   display: none;*/
+  display: none;
   width: 312px;
   height: 56px;
-  margin: auto;
+  margin: 0 auto;
+}
+header .active {
+  display: block;
+}
+header .orderactive .empty-card {
+  display: none;
+}
+header .orderactive .order-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+header .orderactive .checkout {
+  display: block;
 }
 header .nav-mobile-popup {
   display: none;
   position: absolute;
   padding-top: 24px;
-  cursor: pointer;
+  z-index: 1;
   /********************Media********************/
   /*********************************************/
 }
 header .nav-mobile-popup .nav-mobile-icone {
+  position: absolute;
   transition: 0.2s ease;
+  z-index: 2;
+  cursor: pointer;
 }
 header .nav-mobile-popup .nav-mobile-icone:hover {
   transform: scale(1.1);
@@ -386,7 +398,7 @@ header .nav-mobile-popup .nav-mobile-icone:hover path {
 header .nav-mobile-popup .nav-mobile-container {
   display: none;
   position: absolute;
-  z-index: 1;
+  z-index: 99;
   width: 250px;
   height: 900px;
   background-color: hsl(0deg, 0%, 100%);
@@ -397,6 +409,7 @@ header .nav-mobile-popup .nav-mobile-container {
 header .nav-mobile-popup .nav-mobile-container svg {
   margin-bottom: 50px;
   transition: 0.2s ease;
+  cursor: pointer;
 }
 header .nav-mobile-popup .nav-mobile-container svg:hover {
   transform: scale(1.1);
@@ -412,6 +425,9 @@ header .nav-mobile-popup .nav-mobile-container .nav-mobile-wrapper {
 }
 header .nav-mobile-popup .nav-mobile-container .nav-mobile-wrapper p:hover {
   color: hsl(219deg, 9%, 45%);
+}
+header .nav-mobile-popup .active {
+  display: block;
 }
 
 /**********************************************************************/

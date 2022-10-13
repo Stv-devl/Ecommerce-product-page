@@ -13,7 +13,7 @@
 <body>
   <header>
 
-    <!-- mobile popup -->
+    <!-- mobile nav popup -->
     <div class="nav-mobile-popup">
       <svg class="nav-mobile-icone" xmlns="http://www.w3.org/2000/svg" width="16" height="15">
         <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" /></svg>
@@ -31,6 +31,7 @@
         </div>
       </div>
     </div>
+    <!-- nav -->
     <div class="nav-container">
       <div class="nav-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" width="138" height="20" class="logo">
@@ -46,7 +47,7 @@
       <div class="customer-wrapper">
         <div>
           <div class="price-popup">
-            <p class="popup-number">1</p>
+            <p class="popup-number" id="numberDisplayPopup">0</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" class="icon-cart">
               <path
                 d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -54,33 +55,36 @@
           </div>
         </div>
         <img class="profile-avatar" src="./images/image-avatar.png" alt="picture-profile">
+
       </div>
-
-      <!-- order popup -->
-      <div class="popup-container">
-        <p class="cart-title">Cart</p>
-        <div class="order-wrapper">
-          <img class="order-picture" src="./images/image-product-1-thumbnail.jpg" alt="shoes-picture-01">
-          <div>
-            <p class="order-card">Fall Limited Edition Sneakers</p>
-            <p class="order-card">$125.00 x 3 <span class="cart-dark">$375</span></p>
-            <p class="empty-card">Your cart is empty.</p>
-
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="16"
-            class="delete">
-            <defs>
-              <path
-                d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
-                id="a" />
-            </defs>
-            <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
-          </svg>
-        </div>
-        <button class="checkout">Checkout</button>
-      </div>
-
     </div>
+    <!-- cart popup -->
+    <div class="popup-container">
+      <p class="cart-title">Cart</p>
+      <p class="empty-card">Your cart is empty.</p>
+      <div class="order-wrapper">
+        <img class="order-picture" src="./images/image-product-1-thumbnail.jpg" alt="shoes-picture-01">
+        <div>
+          <p class="order-card">Fall Limited Edition Sneakers</p>
+          <p class="order-card">$125.00 x <span id="totalNumberDisplay"></span><span class="cart-dark"
+              id="totalPriceDisplay">$375</span></p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="16"
+          class="delete" id="deleteOrder">
+          <defs>
+            <path
+              d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+              id="a" />
+          </defs>
+          <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
+        </svg>
+      </div>
+      <button class="checkout">Checkout</button>
+    </div>
+    <!-- full cart popup -->
+
+
+
   </header>
   <main>
     <div class="container">
@@ -104,18 +108,17 @@
           <P class="percentage">50%</P>
         </div>
         <p class="old-price">$250.00</p>
-
         <div class="order-container">
           <div class="number-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="12"
-              height="14" viewBox="0 0 485.064 485.064" xml:space="preserve">
+              height="14" viewBox="0 0 485.064 485.064" xml:space="preserve" id="minus">
               <path
                 d="M458.736,181.097H26.334C11.793,181.097,0,192.884,0,207.425v70.215c0,14.541,11.787,26.328,26.334,26.328h432.402    c14.541,0,26.328-11.787,26.328-26.328v-70.215C485.07,192.884,473.283,181.097,458.736,181.097z" />
               <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
             </svg>
-            <p class="order-number">0</p>
+            <p class="order-number" id="numberDisplay">0</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"
-              class="plus">
+              id="plus">
               <defs>
                 <path
                   d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
@@ -124,7 +127,7 @@
               <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
             </svg>
           </div>
-          <button class="add-order" aria-label="close"> <svg aria-hidden="true" focusable="false"
+          <button id="submit" class="add-order" aria-label="close"> <svg aria-hidden="true" focusable="false"
               xmlns="http://www.w3.org/2000/svg" width="22" height="20" class="icon-cart02">
               <path
                 d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -142,7 +145,7 @@
       Coded by <a href="https://github.com/Stv-devl">Stevan-Dev</a>.
     </div>
   </footer>
-  <script src="./index.js"></script>
+  <script src="./Js/index.js"></script>
 </body>
 
 </html>
