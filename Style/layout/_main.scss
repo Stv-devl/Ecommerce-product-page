@@ -28,92 +28,127 @@ main {
       display: block;
     }
     /*********************************************/
-
-    .images-grid {
-      display: grid;
-      grid-template-columns: 88px 88px 88px 88px;
-      grid-template-rows: 445px 88px;
-      gap: 31px;
-      grid-template-areas:
-        "display-picture display-picture display-picture display-picture"
-        "picture01 pitcure02 picture03 picture04";
-
-      /********************Media********************/
-      @media screen and (max-width: 970px) {
-        grid-template-columns: 80px 80px 80px 80px;
-        grid-template-rows: 395px 80px;
-        gap: 25px;
-      }
-      @media screen and (max-width: 870px) {
-        grid-template-columns: 75px 75px 75px 75px;
-        grid-template-rows: 360px 75px;
-        gap: 20px;
-      }
-      @media screen and (max-width: 770px) {
-        display: block;
-        margin: 0 auto;
-      }
-      /*********************************************/
-
-      .display-picture {
-        grid-area: display-picture;
+    .left-container {
+      position: relative;
+      .mobile-image-switch {
+        position: absolute;
+        display: none;
+        z-index: 2;
         width: 100%;
-        border-radius: 15px;
-        cursor: pointer;
+        height: 40px;
+        bottom: 50%;
 
-        &:hover {
-          filter: opacity(0.5);
-        }
         /********************Media********************/
-        @media screen and (max-width: 450px) {
-          height: 300px;
-          border-radius: 0px;
+        @media screen and (max-width: 770px) {
+          display: block;
+        }
+        /*********************************************/
+        .previous-container,
+        .next-container {
+          position: absolute;
+          z-index: 99;
+          @include center;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          background-color: $White;
+          cursor: pointer;
+        }
+        .next-container {
+          left: 84%;
+        }
+        .previous-container {
+          left: 6%;
+        }
+      }
+
+      .images-grid {
+        display: grid;
+        grid-template-columns: 88px 88px 88px 88px;
+        grid-template-rows: 445px 88px;
+        gap: 31px;
+        grid-template-areas:
+          "display-picture display-picture display-picture display-picture"
+          "picture01 pitcure02 picture03 picture04";
+
+        /********************Media********************/
+        @media screen and (max-width: 970px) {
+          grid-template-columns: 80px 80px 80px 80px;
+          grid-template-rows: 395px 80px;
+          gap: 25px;
+        }
+        @media screen and (max-width: 870px) {
+          grid-template-columns: 75px 75px 75px 75px;
+          grid-template-rows: 360px 75px;
+          gap: 20px;
+        }
+        @media screen and (max-width: 770px) {
+          position: relative;
+          display: block;
+          margin: 0 auto;
+        }
+        /*********************************************/
+
+        .display-picture {
+          grid-area: display-picture;
+          width: 100%;
+          border-radius: 15px;
+          cursor: pointer;
+
+          &:hover {
+            filter: opacity(0.5);
+          }
+          /********************Media********************/
+          @media screen and (max-width: 450px) {
+            height: 300px;
+            border-radius: 0px;
+          }
+
+          @media screen and (max-width: 770px) {
+            cursor: auto;
+            &:hover {
+              filter: none;
+            }
+          }
+          /*********************************************/
         }
 
-        @media screen and (max-width: 770px) {
-          cursor: auto;
+        #image-product-1 {
+          grid-area: picture01;
+        }
+        #image-product-2 {
+          grid-area: pitcure02;
+        }
+        #image-product-3 {
+          grid-area: picture03;
+        }
+        #image-product-4 {
+          grid-area: picture04;
+        }
+
+        #image-product-1,
+        #image-product-2,
+        #image-product-3,
+        #image-product-4 {
+          width: 100%;
+          border-radius: 10px;
+          cursor: pointer;
+
+          /********************Media********************/
+          @media screen and (max-width: 770px) {
+            display: none;
+          }
+          /*********************************************/
+
           &:hover {
-            filter: none;
+            filter: opacity(0.5);
           }
         }
-        /*********************************************/
-      }
 
-      #image-product-1 {
-        grid-area: picture01;
-      }
-      #image-product-2 {
-        grid-area: pitcure02;
-      }
-      #image-product-3 {
-        grid-area: picture03;
-      }
-      #image-product-4 {
-        grid-area: picture04;
-      }
-
-      #image-product-1,
-      #image-product-2,
-      #image-product-3,
-      #image-product-4 {
-        width: 100%;
-        border-radius: 10px;
-        cursor: pointer;
-
-        /********************Media********************/
-        @media screen and (max-width: 770px) {
-          display: none;
-        }
-        /*********************************************/
-
-        &:hover {
+        .imgclicked {
+          border: solid 2px $Orange;
           filter: opacity(0.5);
         }
-      }
-
-      .imgclicked {
-        border: solid 2px $Orange;
-        filter: opacity(0.5);
       }
     }
   }

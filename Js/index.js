@@ -104,3 +104,29 @@ img.forEach((image) => {
     displayPicture.src = `./images/${e.target.id}.jpg`;
   });
 });
+/********************************functions for change images (mobile)*******************************/
+
+const nextContainer = document.querySelector(".next-container");
+const previousContainer = document.querySelector(".previous-container");
+let i = 1;
+
+const displayImg = () => {
+  console.log(i);
+  displayPicture.src = `./images/image-product-${i}.jpg`;
+};
+//next
+nextContainer.addEventListener("click", () => {
+  i = ++i;
+  if (i >= 5) {
+    i = 1;
+  }
+  displayImg();
+});
+
+previousContainer.addEventListener("click", () => {
+  i = --i;
+  if (i <= 0) {
+    i = 4;
+  }
+  displayImg();
+});
