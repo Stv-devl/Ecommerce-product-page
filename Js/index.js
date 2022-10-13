@@ -88,6 +88,19 @@ navCloseIcon.addEventListener("click", () => {
   navMobileContainer.classList.remove("active");
 });
 
-//function images
+/********************************functions for change images (desktop)*******************************/
 
-//function image clicked
+const img = document.querySelectorAll(".img");
+const displayPicture = document.querySelector(".display-picture");
+
+img.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    img.forEach((image) => {
+      image.classList.remove("imgclicked");
+    });
+    if (e.target.classList.contains("img")) {
+      e.target.classList.add("imgclicked");
+    }
+    displayPicture.src = `./images/${e.target.id}.jpg`;
+  });
+});

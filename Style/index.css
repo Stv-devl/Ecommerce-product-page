@@ -307,14 +307,9 @@ header .popup-container {
 @media screen and (max-width: 770px) {
   header .popup-container {
     width: 100%;
-    bottom: 60%;
+    bottom: 50%;
     transform: translatex(0%);
     left: 0%;
-  }
-}
-@media screen and (max-width: 480px) {
-  header .popup-container {
-    bottom: 55%;
   }
 }
 header .popup-container .cart-title {
@@ -505,7 +500,7 @@ main .container .images-grid .display-picture {
   /*********************************************/
 }
 main .container .images-grid .display-picture:hover {
-  border: solid 2px hsl(26deg, 100%, 55%);
+  filter: opacity(0.5);
 }
 @media screen and (max-width: 450px) {
   main .container .images-grid .display-picture {
@@ -513,22 +508,30 @@ main .container .images-grid .display-picture:hover {
     border-radius: 0px;
   }
 }
-main .container .images-grid .picture01 {
+@media screen and (max-width: 770px) {
+  main .container .images-grid .display-picture {
+    cursor: auto;
+  }
+  main .container .images-grid .display-picture:hover {
+    filter: none;
+  }
+}
+main .container .images-grid #image-product-1 {
   grid-area: picture01;
 }
-main .container .images-grid .picture02 {
+main .container .images-grid #image-product-2 {
   grid-area: pitcure02;
 }
-main .container .images-grid .picture03 {
+main .container .images-grid #image-product-3 {
   grid-area: picture03;
 }
-main .container .images-grid .picture04 {
+main .container .images-grid #image-product-4 {
   grid-area: picture04;
 }
-main .container .images-grid .picture01,
-main .container .images-grid .picture02,
-main .container .images-grid .picture03,
-main .container .images-grid .picture04 {
+main .container .images-grid #image-product-1,
+main .container .images-grid #image-product-2,
+main .container .images-grid #image-product-3,
+main .container .images-grid #image-product-4 {
   width: 100%;
   border-radius: 10px;
   cursor: pointer;
@@ -536,18 +539,22 @@ main .container .images-grid .picture04 {
   /*********************************************/
 }
 @media screen and (max-width: 770px) {
-  main .container .images-grid .picture01,
-main .container .images-grid .picture02,
-main .container .images-grid .picture03,
-main .container .images-grid .picture04 {
+  main .container .images-grid #image-product-1,
+main .container .images-grid #image-product-2,
+main .container .images-grid #image-product-3,
+main .container .images-grid #image-product-4 {
     display: none;
   }
 }
-main .container .images-grid .picture01:hover,
-main .container .images-grid .picture02:hover,
-main .container .images-grid .picture03:hover,
-main .container .images-grid .picture04:hover {
+main .container .images-grid #image-product-1:hover,
+main .container .images-grid #image-product-2:hover,
+main .container .images-grid #image-product-3:hover,
+main .container .images-grid #image-product-4:hover {
+  filter: opacity(0.5);
+}
+main .container .images-grid .imgclicked {
   border: solid 2px hsl(26deg, 100%, 55%);
+  filter: opacity(0.5);
 }
 main .right-container {
   width: 100%;

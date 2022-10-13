@@ -62,33 +62,40 @@ main {
         cursor: pointer;
 
         &:hover {
-          border: solid 2px $Orange;
+          filter: opacity(0.5);
         }
         /********************Media********************/
         @media screen and (max-width: 450px) {
           height: 300px;
           border-radius: 0px;
         }
+
+        @media screen and (max-width: 770px) {
+          cursor: auto;
+          &:hover {
+            filter: none;
+          }
+        }
         /*********************************************/
       }
 
-      .picture01 {
+      #image-product-1 {
         grid-area: picture01;
       }
-      .picture02 {
+      #image-product-2 {
         grid-area: pitcure02;
       }
-      .picture03 {
+      #image-product-3 {
         grid-area: picture03;
       }
-      .picture04 {
+      #image-product-4 {
         grid-area: picture04;
       }
 
-      .picture01,
-      .picture02,
-      .picture03,
-      .picture04 {
+      #image-product-1,
+      #image-product-2,
+      #image-product-3,
+      #image-product-4 {
         width: 100%;
         border-radius: 10px;
         cursor: pointer;
@@ -100,8 +107,13 @@ main {
         /*********************************************/
 
         &:hover {
-          border: solid 2px $Orange;
+          filter: opacity(0.5);
         }
+      }
+
+      .imgclicked {
+        border: solid 2px $Orange;
+        filter: opacity(0.5);
       }
     }
   }
