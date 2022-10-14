@@ -1,3 +1,7 @@
+/***********************************************************************************************/
+/*****************************Nav popup, Cart popup, and order cart*****************************/
+/***********************************************************************************************/
+
 /********************************Variables*******************************/
 const pricePopup = document.querySelector(".price-popup");
 const popupContainer = document.querySelector(".popup-container");
@@ -9,44 +13,47 @@ let orderNumber = 0;
 let totalNumber = 0;
 
 /********************************functions*******************************/
-
 //function for display number when we click on minus and plus
 const displayNumber = () => {
   numberDisplay.textContent = orderNumber;
 };
 
-//Display the order item on the cart
+// Function for display the order item on the cart
 const activateOrder = () => {
   popupNumber.classList.add("active");
   popupContainer.classList.add("orderactive");
 };
 
-//Display the price and number of item on the cart
-const totalDisplay = () => {
+// Function for display the price and number of item on the cart
+const priceDisplay = () => {
   totalNumberDisplay.textContent = `${totalNumber} `;
   totalPriceDisplay.textContent = `$${(totalNumber * 125.0).toFixed(2)}`;
 };
 
-//calculate
+//reset number display after send to cart
+const reset = () => {
+  numberDisplay.textContent = "0";
+  orderNumber = 0;
+};
+
+//First time we click to add to cart we will start the functions activateOrder() & priceDisplay();. Second time++, we additionate old number and new number and display in the functions totalDisplay() & priceDisplay();
 const calculateOrder = () => {
   if (orderNumber >= 1 && totalNumber <= 0) {
     totalNumber = orderNumber;
     popupNumber.textContent = orderNumber;
     activateOrder();
-    totalDisplay();
-    //display back to 0
-    numberDisplay.textContent = "0";
-    return (orderNumber = 0);
+    priceDisplay();
+    reset();
   } else {
     totalNumber = totalNumber + orderNumber;
     popupNumber.textContent = totalNumber;
     totalDisplay();
-    //display back to 0
-    numberDisplay.textContent = "0";
+    priceDisplay();
+    reset();
   }
-  return (orderNumber = 0);
 };
 
+/********************************addEventListener*******************************/
 //click for delete orders
 deleteOrder.addEventListener("click", () => {
   popupNumber.classList.remove("active");
@@ -54,7 +61,6 @@ deleteOrder.addEventListener("click", () => {
   totalNumber = 0;
 });
 
-/********************************addEventListener*******************************/
 //click minus
 minus.addEventListener("click", () => {
   if (orderNumber <= 0) return;
@@ -63,6 +69,7 @@ minus.addEventListener("click", () => {
   }
   displayNumber();
 });
+
 //click plus
 plus.addEventListener("click", () => {
   orderNumber = ++orderNumber;
@@ -74,7 +81,6 @@ submit.addEventListener("click", (e) => {
   calculateOrder();
 });
 
-/********************************popups toggles*******************************/
 //toggle popup cart
 pricePopup.addEventListener("click", () => {
   popupContainer.classList.toggle("active");
@@ -83,16 +89,30 @@ pricePopup.addEventListener("click", () => {
 // popup nav mobile
 navMobileIcone.addEventListener("click", () => {
   navMobileContainer.classList.add("active");
+  overlay.classList.add("active");
 });
 navCloseIcon.addEventListener("click", () => {
   navMobileContainer.classList.remove("active");
+  overlay.classList.remove("active");
 });
 
-/********************************functions for change images (desktop)*******************************/
+/***********************************************************************************************/
+/*********************************change images and lightbox************************************/
+/***********************************************************************************************/
 
+/*************functions for change images (desktop and lightbox)****************/
+
+//variables
 const img = document.querySelectorAll(".img");
 const displayPicture = document.querySelector(".display-picture");
+const nextContainer = document.querySelectorAll(".next-container");
+const previousContainer = document.querySelectorAll(".previous-container");
+const displayPicture02 = document.querySelector(".display-picture02");
+const lightbox = document.querySelector(".lightbox");
+const overlay = document.querySelector(".overlay");
+let i = 1;
 
+//when we click on 1 of the small images we change displayPicture and imgclicked is added. If classlist = "lightbox activate" display images on lightbox if not display on mobile
 img.forEach((image) => {
   image.addEventListener("click", (e) => {
     img.forEach((image) => {
@@ -101,32 +121,59 @@ img.forEach((image) => {
     if (e.target.classList.contains("img")) {
       e.target.classList.add("imgclicked");
     }
-    displayPicture.src = `./images/${e.target.id}.jpg`;
+    if (lightbox.classList == "lightbox activate") {
+      displayPicture02.src = `./images/${e.target.id}.jpg`;
+    } else {
+      displayPicture.src = `./images/${e.target.id}.jpg`;
+    }
   });
 });
-/********************************functions for change images (mobile)*******************************/
 
-const nextContainer = document.querySelector(".next-container");
-const previousContainer = document.querySelector(".previous-container");
-let i = 1;
+/**********************************Image mobile and lightbox***************************************/
 
-const displayImg = () => {
-  console.log(i);
-  displayPicture.src = `./images/image-product-${i}.jpg`;
-};
-//next
-nextContainer.addEventListener("click", () => {
-  i = ++i;
-  if (i >= 5) {
-    i = 1;
+//functions for change images => if classlist = "lightbox activate" display images on lightbox if not display on mobile
+const displayImgSlider = () => {
+  if (lightbox.classList == "lightbox activate") {
+    displayPicture02.src = `./images/image-product-${i}.jpg`;
+  } else {
+    displayPicture.src = `./images/image-product-${i}.jpg`;
   }
-  displayImg();
+};
+
+//button next for lightbox or mobile,i is the number of images from 1 to 4. We send the number i to the function displayImgSlider() to display the next picture.
+nextContainer.forEach((button) => {
+  button.addEventListener("click", () => {
+    i = ++i;
+    if (i >= 5) {
+      i = 1;
+    }
+    displayImgSlider();
+  });
 });
 
-previousContainer.addEventListener("click", () => {
-  i = --i;
-  if (i <= 0) {
-    i = 4;
-  }
-  displayImg();
+//button previous for lightbox or mobile,i is the number of images from 1 to 4. We send the number i to the function displayImgSlider() to display the next picture.
+previousContainer.forEach((button) => {
+  button.addEventListener("click", () => {
+    i = --i;
+    if (i <= 0) {
+      i = 4;
+    }
+    displayImgSlider();
+  });
+});
+
+/********************************open and close lightbox & overlay********************************/
+displayPicture.addEventListener("click", (e) => {
+  overlay.classList.add("activate");
+  lightbox.classList.add("activate");
+});
+
+overlay.addEventListener("click", (e) => {
+  overlay.classList.remove("activate");
+  lightbox.classList.remove("activate");
+});
+
+closeLogo.addEventListener("click", (e) => {
+  overlay.classList.remove("activate");
+  lightbox.classList.remove("activate");
 });

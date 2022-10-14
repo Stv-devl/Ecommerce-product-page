@@ -6,16 +6,13 @@ header {
   height: 85px;
   border-bottom: solid 1px $Bordergrayishblue;
   margin: 20px auto 65px auto;
-  z-index: 1;
 
   /********************Media********************/
-  @media screen and (max-width: 638px) {
+  @media screen and (max-width: 870px) {
     height: 60px;
-  }
-  @media screen and (max-width: 770px) {
-    width: 90%;
-    margin: 20px auto 15px auto;
     border: none;
+    margin: 20px auto 15px auto;
+    width: 90%;
   }
   /*********************************************/
 
@@ -25,6 +22,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 85px;
+    z-index: 0;
 
     .nav-wrapper {
       @include row;
@@ -35,11 +33,9 @@ header {
       @media screen and (max-width: 980px) {
         gap: 15px;
       }
-      @media screen and (max-width: 865px) {
+      @media screen and (max-width: 870px) {
         gap: 10px;
         font-size: 14px;
-      }
-      @media screen and (max-width: 638px) {
         display: block;
         padding-bottom: 60px;
       }
@@ -49,7 +45,7 @@ header {
         margin-right: 20px;
 
         /********************Media********************/
-        @media screen and (max-width: 638px) {
+        @media screen and (max-width: 870px) {
           margin-left: 35px;
         }
       }
@@ -65,7 +61,7 @@ header {
           border-bottom: solid 5px $Orange;
         }
         /********************Media********************/
-        @media screen and (max-width: 638px) {
+        @media screen and (max-width: 870px) {
           display: none;
         }
         /*********************************************/
@@ -78,10 +74,8 @@ header {
       gap: 46px;
 
       /********************Media********************/
-      @media screen and (max-width: 980px) {
-        gap: 30px;
-      }
-      @media screen and (max-width: 865px) {
+
+      @media screen and (max-width: 870px) {
         gap: 20px;
         font-size: 14px;
       }
@@ -98,15 +92,18 @@ header {
         &:hover path {
           fill: $Verydarkblue;
         }
+        /********************to intercat is JS ********************/
         .popup-number {
           display: none;
           position: absolute;
+          z-index: 1;
           width: 19px;
           height: 13px;
           background-color: $Orange;
           border-radius: 10px;
           transform: translate(9px, -6px);
         }
+        /********************activate the popup number with JS ********************/
         .active {
           @include center;
         }
@@ -118,6 +115,7 @@ header {
         margin-top: 21px;
         border-radius: 50px;
         cursor: pointer;
+        box-shadow: 0px 8px 10px -5px rgba(29, 32, 38, 0.5);
 
         &:hover {
           border: solid 2px $Orange;
@@ -133,7 +131,7 @@ header {
       }
     }
   }
-
+  /********************Popup container to intercat is JS ********************/
   .popup-container {
     display: none;
     position: absolute;
@@ -143,7 +141,7 @@ header {
     transform: translatex(52%);
     left: 52%;
     bottom: 54%;
-    z-index: 2;
+    z-index: 4;
     border-radius: 10px;
     box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5);
 
@@ -156,15 +154,11 @@ header {
       bottom: 51%;
     }
     @media screen and (max-width: 870px) {
-      bottom: 50%;
-      transform: translatex(35%);
-      left: 35%;
-    }
-    @media screen and (max-width: 770px) {
-      width: 100%;
-      bottom: 40%;
+      width: 90%;
+      top: 30%;
       transform: translatex(0%);
       left: 0%;
+      margin-left: 5%;
     }
     /*********************************************/
 
@@ -211,12 +205,14 @@ header {
       margin: 0 auto;
     }
   }
+  /********************to activate popup cart with JS ********************/
 
-  //to activate card with JS
+  //display poput cart
   .active {
     display: block;
   }
-  //interact with JS
+
+  //display orders in popup card
   .orderactive {
     .empty-card {
       display: none;
@@ -228,18 +224,17 @@ header {
       display: block;
     }
   }
-  //interact with JS
 
+  /*************Nav popup for interact with JS (mobile)********************/
+  //nav popup logo
   .nav-mobile-popup {
     display: none;
     position: absolute;
     padding-top: 24px;
-    z-index: 1;
+    z-index: 6;
 
     .nav-mobile-icone {
-      position: absolute;
       transition: 0.2s ease;
-      z-index: 2;
       cursor: pointer;
 
       &:hover {
@@ -249,8 +244,9 @@ header {
         fill: $Verydarkblue;
       }
     }
+    //display for mobile
     /********************Media********************/
-    @media screen and (max-width: 638px) {
+    @media screen and (max-width: 870px) {
       display: block;
     }
     /*********************************************/
@@ -258,8 +254,8 @@ header {
     .nav-mobile-container {
       display: none;
       position: absolute;
-      z-index: 99;
-      width: 250px;
+      z-index: 6;
+      width: 300px;
       height: 900px;
       background-color: $White;
       left: -20px;
@@ -278,19 +274,19 @@ header {
           fill: $Verydarkblue;
         }
       }
-
       .nav-mobile-wrapper {
         display: flex;
         flex-direction: column;
         gap: 20px;
         transition: 0.2s ease;
+        cursor: pointer;
 
         p:hover {
           color: $Darkgrayishblue;
         }
       }
     }
-    //to activate popup nav with JS
+    /*************interact with JS for activate the nav Popup (mobile)********************/
     .active {
       display: block;
     }
