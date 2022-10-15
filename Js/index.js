@@ -28,6 +28,8 @@ const activateOrder = () => {
 const priceDisplay = () => {
   totalNumberDisplay.textContent = `${totalNumber} `;
   totalPriceDisplay.textContent = `$${(totalNumber * 125.0).toFixed(2)}`;
+
+  console.log(totalNumber);
 };
 
 //reset number display after send to cart
@@ -47,7 +49,6 @@ const calculateOrder = () => {
   } else {
     totalNumber = totalNumber + orderNumber;
     popupNumber.textContent = totalNumber;
-    totalDisplay();
     priceDisplay();
     reset();
   }
@@ -89,11 +90,12 @@ pricePopup.addEventListener("click", () => {
 // popup nav mobile
 navMobileIcone.addEventListener("click", () => {
   navMobileContainer.classList.add("active");
-  overlay.classList.add("active");
+  overlay.classList.add("activate");
 });
+
 navCloseIcon.addEventListener("click", () => {
   navMobileContainer.classList.remove("active");
-  overlay.classList.remove("active");
+  overlay.classList.remove("activate");
 });
 
 /***********************************************************************************************/
@@ -163,16 +165,45 @@ previousContainer.forEach((button) => {
 });
 
 /********************************open and close lightbox & overlay********************************/
+
+//if window width < 870 we will close automatically the lightbox & overlay
+function closeLightbox() {
+  if (window.innerWidth <= 870) {
+    lightbox.classList.remove("activate");
+  }
+  if (
+    window.innerWidth <= 870 &&
+    navMobileContainer.classList == "nav-mobile-container"
+  ) {
+    overlay.classList.remove("activate");
+  }
+  return;
+}
+
+//if window width > 870 we will allow to open lightbox and overlay at click
+const allowLightbox = () => {
+  if (window.innerWidth >= 870) {
+    overlay.classList.add("activate");
+    lightbox.classList.add("activate");
+  }
+  return;
+};
+
+//listen window and activate closeLightbox
+window.addEventListener("resize", closeLightbox);
+
+//activate lightbox at click
 displayPicture.addEventListener("click", (e) => {
-  overlay.classList.add("activate");
-  lightbox.classList.add("activate");
+  allowLightbox();
 });
 
+//add overlay at click at click
 overlay.addEventListener("click", (e) => {
   overlay.classList.remove("activate");
   lightbox.classList.remove("activate");
 });
 
+//remove lightbox at click
 closeLogo.addEventListener("click", (e) => {
   overlay.classList.remove("activate");
   lightbox.classList.remove("activate");

@@ -150,15 +150,12 @@ header {
       transform: translatex(40%);
       left: 40%;
     }
-    @media screen and (max-width: 970px) {
-      bottom: 51%;
-    }
     @media screen and (max-width: 870px) {
-      width: 90%;
-      top: 30%;
+      width: 95%;
+      top: 25%;
       transform: translatex(0%);
       left: 0%;
-      margin-left: 5%;
+      margin-left: 2.5%;
     }
     /*********************************************/
 
@@ -207,12 +204,12 @@ header {
   }
   /********************to activate popup cart with JS ********************/
 
-  //display poput cart
+  //display popup cart
   .active {
     display: block;
   }
 
-  //display orders in popup card
+  //display orders in popup cart
   .orderactive {
     .empty-card {
       display: none;
@@ -244,7 +241,6 @@ header {
         fill: $Verydarkblue;
       }
     }
-    //display for mobile
     /********************Media********************/
     @media screen and (max-width: 870px) {
       display: block;
@@ -252,15 +248,17 @@ header {
     /*********************************************/
 
     .nav-mobile-container {
-      display: none;
+      opacity: 0;
       position: absolute;
       z-index: 6;
       width: 300px;
       height: 900px;
       background-color: $White;
-      left: -20px;
+      transform: translatex(-100%);
       top: 10px;
       padding: 25px;
+      transition: transform 0.5s ease-in-out;
+      overflow: visible;
 
       svg {
         margin-bottom: 50px;
@@ -288,7 +286,8 @@ header {
     }
     /*************interact with JS for activate the nav Popup (mobile)********************/
     .active {
-      display: block;
+      opacity: 1;
+      transform: translatex(-26px);
     }
   }
 }

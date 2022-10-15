@@ -286,18 +286,13 @@ header .popup-container {
     left: 40%;
   }
 }
-@media screen and (max-width: 970px) {
-  header .popup-container {
-    bottom: 51%;
-  }
-}
 @media screen and (max-width: 870px) {
   header .popup-container {
-    width: 90%;
-    top: 30%;
+    width: 95%;
+    top: 25%;
     transform: translatex(0%);
     left: 0%;
-    margin-left: 5%;
+    margin-left: 2.5%;
   }
 }
 header .popup-container .cart-title {
@@ -378,15 +373,17 @@ header .nav-mobile-popup .nav-mobile-icone:hover path {
   }
 }
 header .nav-mobile-popup .nav-mobile-container {
-  display: none;
+  opacity: 0;
   position: absolute;
   z-index: 6;
   width: 300px;
   height: 900px;
   background-color: hsl(0deg, 0%, 100%);
-  left: -20px;
+  transform: translatex(-100%);
   top: 10px;
   padding: 25px;
+  transition: transform 0.5s ease-in-out;
+  overflow: visible;
 }
 header .nav-mobile-popup .nav-mobile-container svg {
   margin-bottom: 50px;
@@ -410,7 +407,8 @@ header .nav-mobile-popup .nav-mobile-container .nav-mobile-wrapper p:hover {
   color: hsl(219deg, 9%, 45%);
 }
 header .nav-mobile-popup .active {
-  display: block;
+  opacity: 1;
+  transform: translatex(-26px);
 }
 
 /**********************************************************************/
@@ -520,6 +518,7 @@ main .container .left-container .images-wrapper .display-picture {
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 0px 8px 10px -5px rgba(29, 32, 38, 0.5);
+  transition: 0.2s ease;
   /********************Media********************/
   /*********************************************/
 }
@@ -529,6 +528,10 @@ main .container .left-container .images-wrapper .display-picture:hover {
 @media screen and (max-width: 870px) {
   main .container .left-container .images-wrapper .display-picture {
     box-shadow: none;
+    cursor: auto;
+  }
+  main .container .left-container .images-wrapper .display-picture:hover {
+    filter: none;
   }
 }
 @media screen and (max-width: 550px) {
@@ -564,6 +567,7 @@ main .container .left-container .images-wrapper .image-flex #image-product-4 {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 8px 10px -5px rgba(29, 32, 38, 0.5);
+  transition: 0.2s ease;
 }
 main .container .left-container .images-wrapper .image-flex #image-product-1:hover,
 main .container .left-container .images-wrapper .image-flex #image-product-2:hover,
