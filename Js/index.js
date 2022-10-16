@@ -123,11 +123,8 @@ img.forEach((image) => {
     if (e.target.classList.contains("img")) {
       e.target.classList.add("imgclicked");
     }
-    if (lightbox.classList == "lightbox activate") {
-      displayPicture02.src = `./images/${e.target.id}.jpg`;
-    } else {
-      displayPicture.src = `./images/${e.target.id}.jpg`;
-    }
+    i = e.target.id;
+    displayImgSlider();
   });
 });
 
@@ -146,7 +143,7 @@ const displayImgSlider = () => {
 nextContainer.forEach((button) => {
   button.addEventListener("click", () => {
     i = ++i;
-    if (i >= 5) {
+    if (i > 4) {
       i = 1;
     }
     displayImgSlider();
@@ -157,7 +154,7 @@ nextContainer.forEach((button) => {
 previousContainer.forEach((button) => {
   button.addEventListener("click", () => {
     i = --i;
-    if (i <= 0) {
+    if (i < 1) {
       i = 4;
     }
     displayImgSlider();
