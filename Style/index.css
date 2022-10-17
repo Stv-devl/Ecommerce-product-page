@@ -787,18 +787,18 @@ main .right-container .order-container .add-order {
   justify-content: center;
   justify-content: space-between;
 }
-.lightbox .images-wrapper .image-flex #image-product-1,
-.lightbox .images-wrapper .image-flex #image-product-2,
-.lightbox .images-wrapper .image-flex #image-product-3,
-.lightbox .images-wrapper .image-flex #image-product-4 {
+.lightbox .images-wrapper .image-flex #light1,
+.lightbox .images-wrapper .image-flex #light2,
+.lightbox .images-wrapper .image-flex #light3,
+.lightbox .images-wrapper .image-flex #light4 {
   width: 88px;
   border-radius: 10px;
   cursor: pointer;
 }
-.lightbox .images-wrapper .image-flex #image-product-1:hover,
-.lightbox .images-wrapper .image-flex #image-product-2:hover,
-.lightbox .images-wrapper .image-flex #image-product-3:hover,
-.lightbox .images-wrapper .image-flex #image-product-4:hover {
+.lightbox .images-wrapper .image-flex #light1:hover,
+.lightbox .images-wrapper .image-flex #light2:hover,
+.lightbox .images-wrapper .image-flex #light3:hover,
+.lightbox .images-wrapper .image-flex #light4:hover {
   filter: opacity(0.5);
 }
 .lightbox .images-wrapper .image-flex .imgclicked {

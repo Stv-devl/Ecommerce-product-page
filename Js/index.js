@@ -123,7 +123,8 @@ img.forEach((image) => {
     if (e.target.classList.contains("img")) {
       e.target.classList.add("imgclicked");
     }
-    i = e.target.id;
+    i = e.target.id[5];
+
     displayImgSlider();
   });
 });
