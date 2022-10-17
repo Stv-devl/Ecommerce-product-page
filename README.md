@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./Screenshot/ScreenshotFrontend%20Mentor%20GitHub%20user%20search%20app.png)
+![](./Screenshot/Screenshot%202022-10-17%20at%2019-43-44%20Frontend%20Mentor%20E-commerce%20product%20page.png)
 
 ### Links
 

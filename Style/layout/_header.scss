@@ -3,9 +3,9 @@
 /**********************************************************************/
 header {
   width: 74%;
-  height: 85px;
+  height: 75px;
   border-bottom: solid 1px $Bordergrayishblue;
-  margin: 20px auto 65px auto;
+  margin: 20px auto 55px auto;
 
   /********************Media********************/
   @media screen and (max-width: 870px) {
@@ -21,7 +21,7 @@ header {
     @include row;
     align-items: center;
     justify-content: space-between;
-    height: 85px;
+    height: 75px;
     z-index: 0;
 
     .nav-wrapper {
@@ -52,7 +52,7 @@ header {
       /*********************************************/
 
       p {
-        height: 65px;
+        height: 55px;
         cursor: pointer;
         transition: 0.2s ease;
 
